@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,181 +9,172 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
         body {
             background-color: #0b0f14;
             color: #eaeaea;
         }
+
+        /* BANNER - Mantém a proporção original da imagem sem cortes */
         .hero {
-            position: relative;
-            height: 85vh;
-            background: url('sua-imagem.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .hero .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.6));
+            height: auto; 
+            background: #000;
+            line-height: 0;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .hero-content h1 {
-            font-size: 64px;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
+
+        /* TEXTO ABAIXO DA IMAGEM - Estilo idêntico ao print */
+        .brand-header {
+            text-align: center;
+            padding: 30px 10px;
+            background-color: #0b0f14;
         }
-        .hero-content p {
-            font-size: 20px;
-            opacity: 0.9;
+        .brand-header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-transform: uppercase;
         }
+        .brand-header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        /* NAVEGAÇÃO LARANJA */
         nav {
             background-color: #0f151d;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.6);
-            padding: 18px;
+            padding: 20px;
             text-align: center;
+            border-top: 1px solid #1a1f26;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
         }
         nav a {
-            margin: 0 18px;
             text-decoration: none;
-            color: #ff8c00;
-            font-weight: 600;
-            transition: 0.3s;
+            color: #f0a500;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
-        nav a:hover {
-            color: #ffffff;
-        }
+
+        /* CONTEÚDO */
         .container {
-            max-width: 1150px;
-            margin: 60px auto;
+            max-width: 1000px;
+            margin: 40px auto;
             padding: 0 20px;
         }
-        .section {
-            margin-bottom: 70px;
-        }
         .section h2 {
-            font-size: 32px;
+            font-size: 2.2rem;
             margin-bottom: 25px;
-            color: #ff8c00;
+            color: #f0a500;
         }
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
         .card {
-            background: linear-gradient(145deg, #111923, #0c121a);
-            padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255,140,0,0.25);
+            background: #151a22;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #f0a500;
         }
         .card h3 {
             margin-bottom: 12px;
-            color: #ffae42;
-        }
-        .card p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #d0d0d0;
+            color: #f0a500;
         }
         .about {
-            background: linear-gradient(145deg, #111923, #0c121a);
-            padding: 45px;
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            line-height: 1.9;
-            font-size: 16px;
+            background: #151a22;
+            padding: 30px;
+            border-radius: 12px;
+            line-height: 1.8;
         }
         .projects-btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 18px 45px;
-            background: linear-gradient(135deg, #ff8c00, #ff5500);
-            color: #fff;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #f0a500;
+            color: #000;
             text-decoration: none;
-            border-radius: 40px;
+            border-radius: 8px;
             font-weight: bold;
-            letter-spacing: 1px;
             transition: 0.3s;
-            box-shadow: 0 0 25px rgba(255,140,0,0.6);
         }
         .projects-btn:hover {
+            background: #ffcc00;
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255,140,0,0.9);
         }
         footer {
-            background: #05080c;
-            color: #aaa;
             text-align: center;
             padding: 30px;
-            margin-top: 70px;
-            font-size: 14px;
+            color: #666;
+            background: #080a0d;
+            margin-top: 50px;
         }
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 42px;
-            }
-            .hero {
-                height: 70vh;
-            }
+
+        /* Ajustes para Celular */
+        @media (max-width: 600px) {
+            .brand-header h1 { font-size: 2rem; }
+            nav { gap: 15px; }
         }
     </style>
 </head>
-<body><header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
+<body>
+
+    <header class="hero">
+        <img src="sua-imagem.jpg" alt="BK Designer Banner">
+    </header>
+
+    <div class="brand-header">
         <h1>BK DESIGNER</h1>
         <p>Design • Marketing • Criatividade Profissional</p>
     </div>
-</header><nav>
-    <a href="#servicos">Serviços</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#projetos">Projetos</a>
-</nav><div class="container"><section id="servicos" class="section">
-    <h2>O que oferecemos</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Marketing Digital</h3>
-            <p>Estratégias modernas de marketing para destacar sua marca, aumentar visibilidade e gerar resultados reais.</p>
-        </div>
-        <div class="card">
-            <h3>Banners & Artes</h3>
-            <p>Criação de banners profissionais, artes promocionais e visuais impactantes para redes sociais.</p>
-        </div>
-        <div class="card">
-            <h3>Design Personalizado</h3>
-            <p>Artes totalmente personalizadas de acordo com o que você pedir, seguindo sua identidade e objetivo.</p>
-        </div>
-    </div>
-</section>
 
-<section id="sobre" class="section">
-    <h2>Sobre a BK DESIGNER</h2>
-    <div class="about">
-        <p>
-            Somos a <strong>BK DESIGNER</strong>, um estúdio focado em design e marketing profissional. Estamos <strong>24 horas online</strong>, prontos para atender você de acordo com o que precisar.
-        </p>
-        <p>
-            Trabalhamos com artes personalizadas, marketing visual, banners e soluções criativas sob medida. Cada projeto é desenvolvido com atenção, qualidade e profissionalismo, sempre respeitando o estilo e a ideia do cliente.
-        </p>
-        <a id="projetos" href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank" class="projects-btn">PROJETOS FEITOS POR MIM</a>
-    </div>
-</section>
+    <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank">Projetos</a>
+    </nav>
 
-</div><footer>
-    © 2026 - BK DESIGNER • Todos os direitos reservados
-</footer></body>
-                         </html>
+    <div class="container">
+        <section id="servicos" class="section">
+            <h2>O que oferecemos</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Marketing Digital</h3>
+                    <p>Estratégias modernas de marketing para destacar sua marca e gerar resultados reais.</p>
+                </div>
+                <div class="card">
+                    <h3>Banners & Artes</h3>
+                    <p>Criação de banners profissionais e visuais impactantes para redes sociais.</p>
+                </div>
+                <div class="card">
+                    <h3>Design Personalizado</h3>
+                    <p>Artes personalizadas seguindo sua identidade e objetivo visual.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section">
+            <h2>Sobre a BK DESIGNER</h2>
+            <div class="about">
+                <p>Somos a <strong>BK DESIGNER</strong>, focados em entregar design de alta qualidade. Estamos 24 horas online para atender suas necessidades criativas com agilidade e profissionalismo.</p>
+                <a href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank" class="projects-btn">VER MEUS PROJETOS</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © 2026 - BK DESIGNER • Todos os direitos reservados
+    </footer>
+
+</body>
+</html>
