@@ -4,54 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BK DESIGNER</title>
-
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    body{background:#0b0f14;color:#fff}
 
-    body{
-      background:#0b0f14;
-      color:#fff;
-    }
-
-    /* ===== BANNER AJUSTADO PARA TAMANHO ORIGINAL ===== */
-    .hero {
+    /* ===== BANNER COM TAMANHO ORIGINAL ===== */
+    .hero-container {
       width: 100%;
-      /* O aspect-ratio mantém a proporção. 
-         Se sua imagem for 16:9, use 16/9. Se for mais "comprida", 
-         o navegador ajustará a altura automaticamente para não cortar nada. */
-      aspect-ratio: auto; 
-      background-image: url('sua-imagem.jpg'); 
-      background-size: contain; /* Garante que a imagem apareça inteira */
-      background-position: center;
-      background-repeat: no-repeat;
-      
-      /* Definimos uma altura mínima para mobile e deixamos crescer */
-      min-height: 220px; 
-      height: auto;
+      line-height: 0; /* Remove espaços indesejados abaixo da imagem */
     }
 
-    /* Alternativa: Se preferir que a imagem dite a altura exata: */
     .hero-img {
-      width: 100%;
-      height: auto;
+      width: 100%;    /* Ocupa toda a largura da tela */
+      height: auto;   /* Ajusta a altura automaticamente para manter a proporção original */
       display: block;
     }
 
+    /* Estilo do título e subtítulo abaixo da imagem, como no print */
     .brand-header {
       text-align: center;
-      padding: 30px 10px;
+      padding: 30px 15px;
+      background: #0b0f14;
     }
 
     .brand-header h1 {
       font-size: 2.5rem;
-      font-weight: bold;
       letter-spacing: 2px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
     }
 
     .brand-header p {
@@ -59,62 +39,23 @@
       color: #ccc;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-      background: #0f141b;
-      border-top: 1px solid #1a1f26;
-      position: sticky; /* O menu gruda no topo ao rolar */
-      top: 0;
-      z-index: 100;
-    }
+    /* ===== NAVEGAÇÃO ===== */
+    nav{display:flex;justify-content:center;gap:40px;padding:20px;background:#111; border-top: 1px solid #1a1f26;}
+    nav a{color:#f0a500;text-decoration:none;font-weight:bold}
 
-    nav a {
-      color: #f0a500;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    section{padding:60px 20px;max-width:1000px;margin:auto}
+    h2{color:#f0a500;margin-bottom:20px; font-size: 2rem;}
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .card{background:#151a22;padding:20px;border-radius:10px; border-left: 4px solid #f0a500;}
 
-    h2 {
-      color: #f0a500;
-      margin-bottom: 20px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #151a22;
-      padding: 25px;
-      border-radius: 12px;
-      border-left: 4px solid #f0a500;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #080a0d;
-      color: #555;
-      margin-top: 40px;
-    }
+    footer{text-align:center;padding:20px;background:#111;color:#aaa}
   </style>
 </head>
-
 <body>
 
   <div class="hero-container">
-    <img src="sua-imagem.jpg" alt="BK Designer Banner" class="hero-img">
+    <img src="banner.jpg" alt="BK Designer" class="hero-img">
   </div>
 
   <div class="brand-header">
@@ -125,13 +66,11 @@
   <nav>
     <a href="#servicos">Serviços</a>
     <a href="#sobre">Sobre</a>
-    <a href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank">
-      Projetos
-    </a>
+    <a href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank">Projetos</a>
   </nav>
 
   <section id="servicos">
-    <h2>O que oferecemos</h2>
+    <h2 style="color: #f0a500;">O que oferecemos</h2>
     <div class="cards">
       <div class="card">
         <h3>Marketing Digital</h3>
@@ -150,15 +89,9 @@
 
   <section id="sobre">
     <h2>Sobre</h2>
-    <p>
-      Estamos 24 horas online oferecendo artes personalizadas de acordo
-      com o que você precisar, sempre com qualidade profissional.
-    </p>
+    <p>Estamos 24 horas online oferecendo artes personalizadas de acordo com o que você precisar, sempre com qualidade profissional.</p>
   </section>
 
-  <footer>
-    © 2026 BK DESIGNER
-  </footer>
-
+  <footer>© 2026 BK DESIGNER</footer>
 </body>
 </html>
