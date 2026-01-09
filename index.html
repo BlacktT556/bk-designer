@@ -16,21 +16,19 @@
             color: #eaeaea;
         }
 
-        /* BANNER - Mantém a proporção original da imagem sem cortes */
+        /* BANNER */
         .hero {
             width: 100%;
             height: auto; 
             background: #000;
             line-height: 0;
         }
-
         .hero img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* TEXTO ABAIXO DA IMAGEM - Estilo idêntico ao print */
         .brand-header {
             text-align: center;
             padding: 30px 10px;
@@ -48,7 +46,6 @@
             color: #ccc;
         }
 
-        /* NAVEGAÇÃO LARANJA */
         nav {
             background-color: #0f151d;
             padding: 20px;
@@ -65,7 +62,6 @@
             font-size: 1.1rem;
         }
 
-        /* CONTEÚDO */
         .container {
             max-width: 1000px;
             margin: 40px auto;
@@ -91,12 +87,14 @@
             margin-bottom: 12px;
             color: #f0a500;
         }
-        .about {
-            background: #151a22;
-            padding: 30px;
-            border-radius: 12px;
-            line-height: 1.8;
+
+        /* ANIMAÇÃO DE CLIQUE (CLIN) */
+        .btn-clin:active {
+            transform: scale(0.95);
+            transition: 0.1s;
         }
+
+        /* BOTÃO PROJETOS (LARANJA) */
         .projects-btn {
             display: inline-block;
             margin-top: 20px;
@@ -107,11 +105,35 @@
             border-radius: 8px;
             font-weight: bold;
             transition: 0.3s;
+            margin-right: 10px;
         }
-        .projects-btn:hover {
-            background: #ffcc00;
-            transform: scale(1.05);
+
+        /* NOVO BOTÃO WHATSAPP (VERDE DEGRADÊ) */
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
+
+        .whatsapp-btn:hover {
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .about {
+            background: #151a22;
+            padding: 30px;
+            border-radius: 12px;
+            line-height: 1.8;
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -120,10 +142,10 @@
             margin-top: 50px;
         }
 
-        /* Ajustes para Celular */
         @media (max-width: 600px) {
             .brand-header h1 { font-size: 2rem; }
             nav { gap: 15px; }
+            .projects-btn, .whatsapp-btn { width: 100%; margin-right: 0; text-align: center; }
         }
     </style>
 </head>
@@ -166,8 +188,11 @@
         <section id="sobre" class="section">
             <h2>Sobre a BK DESIGNER</h2>
             <div class="about">
-                <p>Somos a <strong>BK DESIGNER</strong>, focados em entregar design de alta qualidade. Estamos 24 horas online para atender suas necessidades criativas com agilidade e profissionalismo.</p>
-                <a href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank" class="projects-btn">VER MEUS PROJETOS</a>
+                <p>Somos a <strong>BK DESIGNER</strong>, focados em entregar design de alta qualidade. Estamos 24 horas online para atender suas necessidades criativas.</p>
+                
+                <a href="https://drive.google.com/drive/folders/1A4JTY2jkGRtdsTQdSKZ9TkgdrkCMT2ky" target="_blank" class="projects-btn btn-clin">VER MEUS PROJETOS</a>
+                
+                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="whatsapp-btn btn-clin">Entre em contato WHATSAPP</a>
             </div>
         </section>
     </div>
@@ -177,4 +202,5 @@
     </footer>
 
 </body>
-</html>
+    </html>
+    
