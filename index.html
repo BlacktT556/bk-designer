@@ -18,18 +18,30 @@
       color:#fff;
     }
 
-    /* ===== BANNER DO TOPO (EXATAMENTE COMO O PRINT) ===== */
+    /* ===== BANNER AJUSTADO PARA TAMANHO ORIGINAL ===== */
     .hero {
       width: 100%;
-      height: 300px; /* Altura ajustada para mobile */
-      background-image: url('sua-imagem.jpg'); /* Verifique se o nome do arquivo está correto */
-      background-size: cover;
+      /* O aspect-ratio mantém a proporção. 
+         Se sua imagem for 16:9, use 16/9. Se for mais "comprida", 
+         o navegador ajustará a altura automaticamente para não cortar nada. */
+      aspect-ratio: auto; 
+      background-image: url('banner.jpg'); 
+      background-size: contain; /* Garante que a imagem apareça inteira */
       background-position: center;
       background-repeat: no-repeat;
-      border-bottom: 2px solid #222;
+      
+      /* Definimos uma altura mínima para mobile e deixamos crescer */
+      min-height: 220px; 
+      height: auto;
     }
 
-    /* Bloco de texto logo abaixo da imagem */
+    /* Alternativa: Se preferir que a imagem dite a altura exata: */
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .brand-header {
       text-align: center;
       padding: 30px 10px;
@@ -45,10 +57,8 @@
     .brand-header p {
       font-size: 1.1rem;
       color: #ccc;
-      font-weight: 300;
     }
 
-    /* ===== MENU DE NAVEGAÇÃO ===== */
     nav {
       display: flex;
       justify-content: center;
@@ -56,16 +66,17 @@
       padding: 15px;
       background: #0f141b;
       border-top: 1px solid #1a1f26;
+      position: sticky; /* O menu gruda no topo ao rolar */
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
-      color: #f0a500; /* Cor laranja do print */
+      color: #f0a500;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
     }
 
-    /* ===== SEÇÕES ===== */
     section {
       padding: 40px 20px;
       max-width: 1000px;
@@ -75,7 +86,6 @@
     h2 {
       color: #f0a500;
       margin-bottom: 20px;
-      font-size: 1.8rem;
     }
 
     .cards {
@@ -88,12 +98,7 @@
       background: #151a22;
       padding: 25px;
       border-radius: 12px;
-      border-left: 4px solid #f0a500; /* Detalhe lateral */
-    }
-
-    .card h3 {
-      color: #f0a500;
-      margin-bottom: 10px;
+      border-left: 4px solid #f0a500;
     }
 
     footer {
@@ -101,21 +106,16 @@
       padding: 30px;
       background: #080a0d;
       color: #555;
-      font-size: 0.9rem;
       margin-top: 40px;
-    }
-
-    /* Ajuste para telas menores (celular) */
-    @media (max-width: 600px) {
-      .hero { height: 200px; }
-      .brand-header h1 { font-size: 2rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="hero"></div>
+  <div class="hero-container">
+    <img src="banner.jpg" alt="BK Designer Banner" class="hero-img">
+  </div>
 
   <div class="brand-header">
     <h1>BK DESIGNER</h1>
